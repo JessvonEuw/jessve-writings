@@ -1,0 +1,13 @@
+---
+import navData from '../data/navData';
+---
+<header>
+  <nav aria-label='Primary' class="mx-auto max-w-screen-lg px-3 py-6">
+    <div>Jess von Euw</div>
+    <ul>
+      {navData.map(({name, path}) => ( 
+        <a href={path}>{name}</a>
+      ))}
+    </ul>
+  </nav>
+</header>
