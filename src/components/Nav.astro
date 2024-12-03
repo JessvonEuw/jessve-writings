@@ -1,13 +1,20 @@
 ---
 import navData from '../data/navData';
+import Container from './Container.astro';
 ---
 <header>
-  <nav aria-label='Primary' class="mx-auto max-w-screen-lg px-3 py-6">
-    <div>Jess von Euw</div>
-    <ul>
-      {navData.map(({name, path}) => ( 
-        <a href={path}>{name}</a>
-      ))}
-    </ul>
+  <nav aria-label='Primary'>
+    <Container>
+      <div class="flex flex-col gap-y-3 sm:flex-row sm:items-center sm:justify-between">
+        <div class='text-white text-xl font-bold'>Jess von Euw</div>
+        <ul class="flex gap-x-3 font-medium text-slate-200">
+          {navData.map(({name, path}) => (
+            <li class="hover:text-white">
+              <a href={path}>{name}</a>
+            </li>
+          ))}
+      </ul>
+    </div>
+  </Container>
   </nav>
 </header>
